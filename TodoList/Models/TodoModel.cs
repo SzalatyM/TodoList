@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,7 +15,7 @@ namespace TodoList.Models
         public string Name { get; set; }
         [DisplayName("Destription")]
         public string Destriptions { get; set; }
-        [DisplayFormat(DataFormatString = "{0:d}")]
+        [DisplayFormat(DataFormatString = "{0:F}")]
         public DateTime ReleaseDate { get; set; }
 
 

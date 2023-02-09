@@ -12,7 +12,7 @@ namespace TodoList.Controllers
     {
         private static IList<TodoModel> todoList = new List<TodoModel>()
         {
-            new TodoModel(){TaskId = 1, Name = "Make a excercise ", Destriptions = "For interview", ReleaseDate = DateTime.Now}
+            new TodoModel(){TaskId = 1, Name = "Make a excercise ", Destriptions = "For interview", ReleaseDate = DateTime.Today}
         };
         // GET: TodoController
         public ActionResult Index()
@@ -55,9 +55,10 @@ namespace TodoList.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id,TodoModel todoModel)
         {
-            TodoModel todo = new TodoModel();
+            TodoModel todo = todoList.FirstOrDefault(t => t.TaskId == id);
             todo.Name = todoModel.Name;
             todo.Destriptions = todoModel.Destriptions;
+            todo.ReleaseDate = todoModel.ReleaseDate;
 
                 return RedirectToAction(nameof(Index));
            

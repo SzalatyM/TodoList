@@ -4,10 +4,10 @@
     ViewData["Title"] = "Todo List";
 }
 
-<h1>Todo List</h1>
+<h1 class="display-4">Todo List</h1>
 
 <p>
-    <a asp-action="Create">Create a new note</a>
+    <a class=" btn btn-primary" asp-action="Create">Create a new note</a>
 </p>
 <table class="table">
     <thead>
@@ -30,16 +30,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
+            <td>  
                 @Html.DisplayFor(modelItem => item.Destriptions)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ReleaseDate)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.TaskId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.TaskId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TaskId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.TaskId }, new {@class = "btn btn-warning"})
+                @Html.ActionLink("Details", "Details", new { id = item.TaskId }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.TaskId }, new { @class = "btn btn-danger" })
             </td>
         </tr>
 }

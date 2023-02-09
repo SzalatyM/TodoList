@@ -10,10 +10,8 @@ namespace TodoList.Controllers
 {
     public class TodoController : Controller
     {
-        private static IList<TodoModel> todoList = new List<TodoModel>()
-        {
-            new TodoModel(){TaskId = 1, Name = "Make a excercise ", Destriptions = "For interview", ReleaseDate = DateTime.Today}
-        };
+        private static IList<TodoModel> todoList = new List<TodoModel>();
+
         // GET: TodoController
         public ActionResult Index()
         {
@@ -29,7 +27,6 @@ namespace TodoList.Controllers
         // GET: TodoController/Create
         public ActionResult Create()
         {
-
             return View(new TodoModel());
         }
 

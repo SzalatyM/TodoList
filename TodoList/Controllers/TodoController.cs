@@ -77,5 +77,9 @@ namespace TodoList.Controllers
                 return RedirectToAction(nameof(Index));
             
         }
+        public ActionResult SendReminder(int id)
+        {
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
